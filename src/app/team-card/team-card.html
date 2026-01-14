@@ -1,0 +1,23 @@
+<div class="add_players" *ngIf="Players.length < 10">
+    <label>name</label><input type="text" placeholder="name" [(ngModel)]="name"><label for="">Level</label><input type="text" placeholder="level" [(ngModel)]="level">
+    <button (click)="addToPlayers(name,level)">Add Player</button>
+</div>
+    <button (click)="createTeams()" *ngIf="Players.length == 10" >CreateTeams</button>
+
+<div class="Teams Container" *ngIf="clicked">
+<div class="TeamA" >
+    <h1>TeamA</h1>
+    <div  *ngFor="let player of Team1; let i = index" >
+    <h1>{{player.name}}</h1>
+    <h1>{{player.level}}</h1>
+    </div>
+</div>
+<div class="TeamB" >
+    <h1>TeamB</h1>
+    <div  *ngFor=" let player of Team2; let i = index">
+        <h1>{{player.name}}</h1>
+        <h1>{{player.level}}</h1>
+    </div>
+    
+</div>
+</div>
